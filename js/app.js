@@ -101,6 +101,36 @@
         }
     }
 
+    function swipeLeft() {
+        if (index < slides_number) {
+            $("#slide" + index)
+                .removeClass('animated fadeInRightBig')
+                .toggleClass('hide');
+
+            index += 1;
+            location.hash = "#!slide" + index;
+
+            $("#slide" + index)
+                .toggleClass('hide')
+                .addClass('animated fadeInRightBig');
+        }
+    }
+
+    function swipeRight() {
+        if (index > 1) {
+            $("#slide" + index)
+                .removeClass('animated fadeInLeftBig')
+                .toggleClass('hide');
+
+            index -= 1;
+            location.hash = "#!slide" + index;
+
+            $("#slide" + index)
+                .toggleClass('hide')
+                .addClass('animated fadeInLeftBig');
+        }
+    }
+
     function onKeyDown(e) {
         // left arrow
         if (e.keyCode === 37) {
@@ -113,10 +143,12 @@
     }
 
 
+
+
     // attach events
     $(document).keydown(onKeyDown);
-    Hammer(document.getElementById('body')).on("swipeleft", moveLeft);
-    Hammer(document.getElementById('body')).on("swiperight", moveRight);
+    Hammer(document.getElementById('body')).on("swipeleft", swipeLeft);
+    Hammer(document.getElementById('body')).on("swiperight", swipeRight);
     window.addEventListener("optimizedResize", resize);
     throttle("resize", "optimizedResize");
 
