@@ -93,9 +93,15 @@
         }
 
         @media only screen and (max-width: 800px) {
-            .slide_content,
+            .slide_content {
+                width: 100%;
+            }
             .slide_img {
                 width: 100%;
+                border-top: 10px solid #2c93cd;
+                position: absolute;
+                left: 0;
+                bottom: -8px;
             }
         }
 	</style>
@@ -117,20 +123,20 @@
             <div class="slide_title">
                 <a href="http://www.simonesacchi.com/fastreading/" target="_blank">Fast Reading</a>
             </div>
-            <div>
-                <div class="slide_content">
-                    <ul>
-                        <li>Css Animation</li>
-                        <li>Javascript state management</li>
-                        <li>neurophisiological</li>
-                    </ul>
-                </div>
-                <div class="slide_img">
-                    <a href="http://www.simonesacchi.com/fastreading/" target="_blank">
-                        <img src="/img/fastreading.png" style="width: 100%;height: 100%;">
-                    </a>
-                </div>
+
+            <div class="slide_content">
+                <ul>
+                    <li>Css Animation</li>
+                    <li>Javascript state management</li>
+                    <li>neurophisiological</li>
+                </ul>
             </div>
+            <div class="slide_img">
+                <a href="http://www.simonesacchi.com/fastreading/" target="_blank">
+                    <img src="/img/fastreading.png" style="max-width: 100%;">
+                </a>
+            </div>
+
         </div>
 
 		<div id="slide2" class="slide hide">slide 2</div>
